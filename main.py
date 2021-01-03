@@ -1,15 +1,24 @@
-from module.helper import PrintHandler
+from module.helper.PrintHandler import printHelp
 from module.helper.ArgumentHandler import getAllArgument
+from module.core.Chatting import chatting
 
 if __name__ == '__main__':
-    all_arguments = getAllArgument()
+    arguments = getAllArgument()
 
-    if all_arguments is None:
-        PrintHandler.printHelp()
+    if arguments is None:
+        printHelp()
         exit(0)
-    elif all_arguments.get("ERROR_MESSAGE") is not None:
-        PrintHandler.printHelp(all_arguments["ERROR_MESSAGE"])
+    elif arguments.get("ERROR_MESSAGE") is not None:
+        printHelp(arguments["ERROR_MESSAGE"])
         exit(0)
+
+    if arguments.get("MODE") == "CHAT":
+        chatting(arguments.get("OPTION"))
+    elif arguments.get("MODE") == "SCAN":
+        pass
+    elif arguments.get("MODE") == "LOG":
+        pass
+
 
 
 

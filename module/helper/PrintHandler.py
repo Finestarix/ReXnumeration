@@ -1,4 +1,5 @@
 import sys
+from datetime import datetime
 try:
     from colored import fg, bg, attr
 except ModuleNotFoundError:
@@ -18,11 +19,29 @@ def printHeader():
     print("%s Version 1.0%s\n" % (fg('light_salmon_3a'), attr('reset')))
 
 
+def printError(errorMessage):
+    print("%s [!] %s %s" % (fg('red'), errorMessage, attr('reset')))
+
+
+def printInformation(message):
+    print("%s [!] %s %s" % (fg('orange_1'), message, attr('reset')))
+
+
+def printHeaderChatting(message=None, errorMessage=None):
+    printHeader()
+
+    if errorMessage is not None:
+        printError(errorMessage)
+    else:
+        current_date_time = datetime.today().strftime('%d-%b-%Y %H:%M:%S')
+        print("%s [*] %s %s" % (fg('blue_3a'), message + "at " + current_date_time, attr('reset')), end="\n\n")
+
+
 def printHelp(errorMessage=None):
     printHeader()
 
     if errorMessage is not None:
-        print("%s [!] %s %s" % (fg('red'), errorMessage, attr('reset')), end="\n\n")
+        printError(errorMessage)
 
     file_name = sys.argv[0]
 
