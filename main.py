@@ -1,6 +1,7 @@
 from module.helper.PrintHandler import printHelp
 from module.helper.ArgumentHandler import getAllArgument
-from module.core.Chatting import chatting
+from module.core.chatting.Chatting import chatting
+from sys import exit
 
 if __name__ == '__main__':
     arguments = getAllArgument()

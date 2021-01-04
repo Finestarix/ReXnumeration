@@ -1,11 +1,12 @@
 import sys
 from datetime import datetime
-try:
-    from colored import fg, bg, attr
-except ModuleNotFoundError:
-    import subprocess
-    subprocess.check_call([sys.executable, '-m', 'pip', 'install', 'colored'])
-    from colored import fg, bg, attr
+from colored import fg, attr
+# try:
+#     from colored import fg, attr
+# except ModuleNotFoundError:
+#     import subprocess
+#     subprocess.check_call([sys.executable, '-m', 'pip', 'install', 'colored'])
+#     from colored import fg, attr
 
 
 def printHeader():
