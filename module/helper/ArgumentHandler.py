@@ -61,13 +61,9 @@ def validateChatOption(chat_option):
 
 
 def getScanOption(args):
-    scan_option = {"HOST": getHost(args), "TCP": False, "UDP": False, "FROM": 1, "END": 65535}
+    scan_option = {"HOST": getHost(args), "FROM": 1, "END": 65535}
     for key, value in args:
-        if key in ("-t", "--tcp"):
-            scan_option["TCP"] = True
-        elif key in ("-u", "--udp"):
-            scan_option["UDP"] = True
-        elif key in ("-f", "--from"):
+        if key in ("-f", "--from"):
             scan_option["FROM"] = value
         elif key in ("-e", "--end"):
             scan_option["END"] = value
@@ -112,8 +108,8 @@ def validateLogOption(log_option):
 def getAllArgument():
     try:
         args, _ = getopt.getopt(sys.argv[1:],
-                                "h:p:cn:rstuf:e:lkmd:",
-                                ["host=", "port=", "chat", "number=", "runServer", "scan", "tcp", "udp", "from=",
+                                "h:p:cn:rsf:e:lkmd:",
+                                ["host=", "port=", "chat", "number=", "runServer", "scan", "from=",
                                  "end=", "log", "keyboard", "mouse", "delay="])
     except Exception:
         return None

@@ -1,6 +1,7 @@
 from module.helper.PrintHandler import printHelp
 from module.helper.ArgumentHandler import getAllArgument
 from module.core.chatting.Chatting import chatting
+from module.core.scanning.Scanning import scanning
 from sys import exit
 
 if __name__ == '__main__':
@@ -16,12 +17,6 @@ if __name__ == '__main__':
     if arguments.get("MODE") == "CHAT":
         chatting(arguments.get("OPTION"))
     elif arguments.get("MODE") == "SCAN":
-        pass
+        scanning(arguments.get("OPTION"))
     elif arguments.get("MODE") == "LOG":
         pass
-
-
-
-
-
-
