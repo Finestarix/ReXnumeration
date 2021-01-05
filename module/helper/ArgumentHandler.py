@@ -86,31 +86,27 @@ def validateScanOption(scan_option):
 
 
 def getLogOption(args):
-    log_option = {"KEYBOARD": False, "MOUSE": False, "DELAY": 1}
+    log_option = {"KEYBOARD": False, "MOUSE": False}
     for key, value in args:
         if key in ("-k", "--keyboard"):
             log_option["KEYBOARD"] = True
         elif key in ("-m", "--mouse"):
             log_option["MOUSE"] = True
-        elif key in ("-d", "--delay"):
-            log_option["DELAY"] = value
     return log_option
 
 
 def validateLogOption(log_option):
     if log_option.get("KEYBOARD") is False and log_option.get("MOUSE") is False:
         return "Error: Missing argument '-k | --keyboard' and/or '-m | --mouse'."
-    elif not Validator.isValidRange(log_option.get("DELAY"), 1, 10):
-        return "Error: Missing argument '-d | --delay'."
     return None
 
 
 def getAllArgument():
     try:
         args, _ = getopt.getopt(sys.argv[1:],
-                                "h:p:cn:rsf:e:lkmd:",
+                                "h:p:cn:rsf:e:lkm",
                                 ["host=", "port=", "chat", "number=", "runServer", "scan", "from=",
-                                 "end=", "log", "keyboard", "mouse", "delay="])
+                                 "end=", "log", "keyboard", "mouse"])
     except Exception:
         return None
 

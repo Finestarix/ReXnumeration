@@ -1,9 +1,9 @@
 import socket
 from sys import exit
-from progress.bar import Bar
 from csv import DictReader
 from threading import Thread
-from module.helper.PrintHandler import printHeaderChatting, printError, printInformation
+from progress.bar import Bar
+from module.helper.PrintHandler import printHeaderCustom, printError
 
 SOCKET_ADDRESS_FAMILY = socket.AF_INET
 SOCKET_PROTOCOL_TCP = socket.SOCK_STREAM
@@ -28,6 +28,7 @@ def scanningPortTCP(host, port, SOCKET_PROTOCOL, progress):
     socket_current.close()
 
     progress.next()
+
 
 def scanningTCP(arguments):
     try:
@@ -57,5 +58,5 @@ def scanningTCP(arguments):
 
 
 def scanning(arguments):
-    printHeaderChatting(message="Scanning " + arguments.get("HOST") + " ")
+    printHeaderCustom(message="Scanning " + arguments.get("HOST") + " ")
     scanningTCP(arguments)

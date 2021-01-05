@@ -1,7 +1,7 @@
 from select import select
 from tqdm import tqdm
 from threading import Thread
-from module.helper.PrintHandler import printHeaderChatting
+from module.helper.PrintHandler import printHeaderCustom
 from module.core.chatting.ChattingUtility import *
 
 SOCKET_LIST = []
@@ -134,12 +134,12 @@ def chattingServer(arguments):
     try:
         socket_server.bind((arguments.get("HOST"), int(arguments.get("PORT"))))
     except Exception:
-        printHeaderChatting(errorMessage="Unable to create a group chat.")
+        printHeaderCustom(errorMessage="Unable to create a group chat.")
         return
     socket_server.listen(int(arguments.get("NUMBER")))
     SOCKET_LIST.append(socket_server)
 
-    printHeaderChatting(message="Listening on " + getAddress(socket_server, isLeft=True) + " ")
+    printHeaderCustom(message="Listening on " + getAddress(socket_server, isLeft=True) + " ")
 
     receive_thread = Thread(target=receiveMessageServer, args=(socket_server,))
     send_thread = Thread(target=sendMessageServer, args=(socket_server,))

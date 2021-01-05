@@ -28,7 +28,7 @@ def printInformation(message):
     print("%s [!] %s %s" % (fg('orange_1'), message, attr('reset')))
 
 
-def printHeaderChatting(message=None, errorMessage=None):
+def printHeaderCustom(message=None, errorMessage=None):
     printHeader()
 
     if errorMessage is not None:
@@ -77,8 +77,8 @@ def printHelp(errorMessage=None):
     print("   Script for port scanning on 127.0.0.1 from port 100 until 1000")
     print("      {} -s -h 127.0.0.1 -f 100 -e 1000".format(file_name))
     print("      {} --scan --host=127.0.0.1 --from=100 --end=1000".format(file_name))
-    print("   Script for key logger and mouse logger with delay of 10 seconds")
-    print("      {} -l -k -m -d 10".format(file_name))
-    print("      {} --log --keyboard --mouse --delay=10".format(file_name))
+    print("   Script for key logger and mouse logger")
+    print("      {} -l -k -m".format(file_name))
+    print("      {} --log --keyboard --mouse".format(file_name))
     print("%s" % (attr('reset')), end="")
 

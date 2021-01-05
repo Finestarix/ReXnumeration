@@ -5,7 +5,7 @@ from uuid import uuid4
 from autopy import bitmap
 from threading import Thread
 from module.core.chatting.ChattingUtility import *
-from module.helper.PrintHandler import printHeaderChatting, printError
+from module.helper.PrintHandler import printHeaderCustom, printError
 
 
 def sendScreenshotClient(socket_client, message_json):
@@ -109,10 +109,10 @@ def chattingClient(arguments):
     try:
         socket_client.connect((arguments.get("HOST"), int(arguments.get("PORT"))))
     except Exception:
-        printHeaderChatting(errorMessage="Unable to join the group chat.")
+        printHeaderCustom(errorMessage="Unable to join the group chat.")
         return
 
-    printHeaderChatting(message="Connected to " + getAddress(socket_client) + " ")
+    printHeaderCustom(message="Connected to " + getAddress(socket_client) + " ")
 
     receive_message = Thread(target=receiveMessageClient, args=(socket_client,))
     send_message = Thread(target=sendMessageClient, args=(socket_client,))
