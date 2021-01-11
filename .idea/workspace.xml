@@ -2,7 +2,14 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="9936ec17-8c3c-4c1f-b8b6-70b648578780" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Main.py" beforeDir="false" afterPath="$PROJECT_DIR$/Main.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/files/receive/Testing.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/files/send/Testing.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/module/core/chatting/ChattingClient.py" beforeDir="false" afterPath="$PROJECT_DIR$/module/core/chatting/ChattingClient.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/module/core/logging/Logging.py" beforeDir="false" afterPath="$PROJECT_DIR$/module/core/logging/Logging.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/module/helper/FileHandler.py" beforeDir="false" afterPath="$PROJECT_DIR$/module/helper/FileHandler.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -22,7 +29,7 @@
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/Main.py" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.detected.package.tslint" value="true" />
     <property name="node.js.path.for.package.eslint" value="project" />
@@ -66,6 +73,7 @@
       <workItem from="1609798338581" duration="1990000" />
       <workItem from="1609808945524" duration="5389000" />
       <workItem from="1609852990885" duration="5004000" />
+      <workItem from="1610368776781" duration="587000" />
     </task>
     <servers />
   </component>

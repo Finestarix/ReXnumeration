@@ -91,6 +91,7 @@ def logging(arguments):
         printHeaderCustom(message="Logging Keyboard and Mouse ")
         printInformation("Logging Keyboard Result: " + KEY_LOG_FILE)
         printInformation("Logging Mouse Result: " + MOUSE_LOG_FILE)
+        printInformation("Press [ESC] on keyboard or [Right Click] on mouse.")
 
         listenerMouse = ListenerMouse(on_move=onMouseMove, on_click=onMouseClick, on_scroll=onMouseScroll)
         listenerKeyboard = ListenerKeyboard(on_press=onKeyPressed)
@@ -102,6 +103,7 @@ def logging(arguments):
     elif arguments.get("KEYBOARD"):
         printHeaderCustom(message="Logging Keyboard ")
         printInformation("Logging Keyboard Result: " + KEY_LOG_FILE)
+        printInformation("Press [ESC] on keyboard.")
 
         listenerKeyboard = ListenerKeyboard(on_press=onKeyPressed)
         listenerKeyboard.start()
@@ -110,6 +112,7 @@ def logging(arguments):
     elif arguments.get("MOUSE"):
         printHeaderCustom(message="Logging Mouse ")
         printInformation("Logging Mouse Result: " + MOUSE_LOG_FILE)
+        printInformation("Press [Right Click] on mouse.")
 
         listenerMouse = ListenerMouse(on_move=onMouseMove, on_click=onMouseClick, on_scroll=onMouseScroll)
         listenerMouse.start()

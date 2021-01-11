@@ -1,9 +1,13 @@
-import tarfile
-from tqdm import tqdm
+from os import path, makedirs
 
+def autoCreateFiles():
 
-def compress(file_name, file):
+    if not path.exists("files"):
+        makedirs("files")
 
-    tar = tarfile.open(file_name, mode="w:gz")
-    file_data = tqdm(file)
-    # for
+    if not path.exists("files/log"):
+        makedirs("files/log")
+    if not path.exists("files/receive"):
+        makedirs("files/receive")
+    if not path.exists("files/send"):
+        makedirs("files/send")

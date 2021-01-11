@@ -1,11 +1,12 @@
 from os import path, makedirs
 from tqdm import tqdm
 from time import sleep
+from os import path
 from uuid import uuid4
 from autopy import bitmap
 from threading import Thread
 from module.core.chatting.ChattingUtility import *
-from module.helper.PrintHandler import printHeaderCustom, printError
+from module.helper.PrintHandler import printHeaderCustom, printError, printInformation
 
 
 def sendScreenshotClient(socket_client, message_json):
@@ -22,6 +23,11 @@ def sendScreenshotClient(socket_client, message_json):
 
 def sendFileClient(socket_client, file_name, message_json):
     file_path = DIRECTORY_SEND + file_name
+
+    if not path.isfile(file_path):
+        printError("File not found !")
+        return
+
     file_size = path.getsize(file_path)
 
     message_json["TYPE"] = "FILE"
