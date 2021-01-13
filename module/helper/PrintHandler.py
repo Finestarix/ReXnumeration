@@ -48,7 +48,7 @@ def printHelp(errorMessage=None):
 
     print("%s" % (fg('blue_3a')), end="")
     print(" Usage: %s (-c -h <ip_address> -p <port> [-r [-n <total_connection>]] | "
-          "-s -h <ip_address> [-f <port>] [-e <port>] | -l (-k | -m) [-d <time>])\n" % file_name)
+          "-s -h <ip_address> [-f <port>] [-e <port>] | -l (-k | -m)\n" % file_name)
 
     print("%s" % (fg('dodger_blue_2')), end="")
     print(" Options:")
@@ -62,8 +62,7 @@ def printHelp(errorMessage=None):
     print("   -e <port>, --end=<port>\t\t\t\t Set last port constraint (default: 65535)")
     print("   -l, --log\t\t\t\t\t\t Set application mode to logging")
     print("   -k, --keyboard\t\t\t\t\t Enable keyboard logging")
-    print("   -m, --mouse\t\t\t\t\t\t Enable mouse logging")
-    print("   -d <time>, --delay=<time>\t\t\t\t Set delay time to send data in second (default: 1)\n")
+    print("   -m, --mouse\t\t\t\t\t\t Enable mouse logging\n")
 
     print("%s" % (fg('deep_sky_blue_4b')), end="")
     print(" Example:")
